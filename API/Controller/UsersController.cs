@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -25,14 +26,14 @@ namespace API.Controller
 
 
         [HttpGet]
+        [Authorize(Roles = "Custom")]
         public IActionResult GetAllUser()
         {
 
             return Ok(_userService.GetAllUser());
         }
 
- 
-      
+
         public async Task<IActionResult> Login(string username, string password)
         {
             return Ok(await _userService.Authenticate(username, password));
