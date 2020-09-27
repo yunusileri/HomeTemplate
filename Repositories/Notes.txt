@@ -1,0 +1,2 @@
+﻿ dotnet ef migrations add 2 --startup-project=C:\Users\user\Desktop\Projeler\HomeTemplate\API\API.csproj --project C:\Users\user\Desktop\Projeler\HomeTemplate\Repositories\Repositories.csproj
+dotnet ef database update  --startup-project=C:\Users\user\Desktop\Projeler\HomeTemplate\API\API.csproj
